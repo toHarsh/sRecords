@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: emailvalidator
+Version: 0.3
+Summary: A python package for validating email
+Home-page: https://github.com/amitjaiswal396/emailvalidator
+Author: Amit Jaiswal, Rohit Sonawane
+Author-email: amitjaiswal396@gmail.com, rohitsonawane.genie@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/amitjaiswal396/emailvalidator/tarball/0.3
+Description: UNKNOWN
+Keywords: email,email validation,email validator,python package for email validation,python email validator
+Platform: UNKNOWN
+Classifier: Natural Language :: English
+Classifier: License :: Freeware
+Classifier: Programming Language :: Python :: 2.7

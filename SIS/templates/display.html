@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<section class="register-form">
+    <div class="container">
+        <div class="row">
+            <div id="col" class="col-md-12 mt-auto">
+                
+                <div class="card-deck">
+                    {% for i in infos %}
+                <div class="card mt-5" style="width: 18rem;">
+                        <div class="card-body">
+                            <a href="{{url_for('infoPage',info_id=info_id)}}"><h5 class="card-title">Student - {{i.name}}</h5></a>
+                        <p class="card-text">Roll Number - {{i.rollNo}}</p>
+                        <p class="card-text">PRN - {{i.prn}}</p>
+                        <p class="card-text">Mobile Number - {{i.mobNo}}</p>
+                        <p class="card-text">Email - {{i.email}}</p>
+                        <p class="card-text">City - {{i.city}}</p>
+                        <p class="card-text">State - {{i.state}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+    
+{% endblock content %}
+
+<!-- <tr>
+                            <th>Roll_No</th>
+                            <th>PRN</th>
+                            <th>Name</th>
+                            <th>Mobile Number</th>
+                            <th>Email</th>
+                            <th>City</th>
+                            <th>State</th>
+                        </tr>
+                        <tr>
