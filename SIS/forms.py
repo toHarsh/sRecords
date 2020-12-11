@@ -41,16 +41,6 @@ class sisForm(FlaskForm):
         if info:
             raise ValidationError('This Email is already there in the database.')
 
-    #def check_prn(self,prn):
-    #    info = Info.query.filter_by(prn=prn.data).first()
-    #    if len(prn) < 10:
-    #        raise ValidationError('PRN must be of 10 digits')
-    #        
-    #def check_mobNo(self,mobNo):
-    #    info = Info.query.filter_by(mobNo=mobNo.data).first()
-    #    if len(mobNo) < 10:
-    #        raise ValidationError('Mobile Number must be of 10 digits')
-
 class adminForm(FlaskForm):
     email = StringField('Email',
                         validators=[DataRequired(), Email()])
