@@ -1,8 +1,10 @@
-# Student-Information-System
+# Management System with CRD functionality
+<h1>Using Flask</h1>
+
+Applications:
 Student-Information-System
-Using Flask
 
-
+How to Use:
 Steps:
 Step 1:
 clone this repo in a folder.
@@ -15,4 +17,10 @@ Step 3:
 venv\Scripts\activate
 
 Step 4:
-pip install flask
+pip install -r requiremnts.txt
+
+Step 5:
+python run.py
+
+Step 6:
+End
