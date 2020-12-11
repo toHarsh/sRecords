@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+    <section class="register-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-6 mx-auto">
+                    
+                    <div class="jumbotron vertical-center mt-5 mb-5" style="transform: translateY(25%);">
+                        <h1 class="text-center" style="font-weight: 800;">{{title}}</h1>
+                        <form method="POST" action="" class="mt-5">
+                            {{form.hidden_tag()}}
+                            <div class="form-group">
+                              <label for="email">Email</label>
+                                {% if form.email.errors %}
+                                    {{form.email(class="form-control is-invalid")}}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.email.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{form.email(class="form-control")}}
+                                {% endif %}
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                {% if form.password.errors %}
+                                    {{form.password(class="form-control is-invalid")}}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.password.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{form.password(class="form-control")}}
+                                {% endif %}
+                            </div>                              
+                              {{form.submit(class="btn btn-primary submit-btn w-100")}}
+
+                              {% with messages = get_flashed_messages(with_categories=true) %}
+                                {% if messages %}
+                                    {% for category, message in messages %}
+                                        <div class="alert alert-{{category}} mt-3">
+                                            {{message}}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                          </form>
+                    </div>
+                </div>  
+            </div>
+               
+        </div>
+    </section>
+{% endblock content %}
+

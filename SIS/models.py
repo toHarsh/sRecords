@@ -1,6 +1,11 @@
-from SIS import db
+from SIS import db,login_manager
+from flask_login import UserMixin
 
-class Info(db.Model):
+@login_manager.user_loader
+def get_user(user_id):
+    return Admin.query.get(int(user_id))
+
+class Info(db.Model,UserMixin):
     id = db.Column(db.Integer,primary_key=True)
     rollNo = db.Column(db.Integer,unique=True, nullable=False)
     prn = db.Column(db.Integer,unique=True, nullable=False)
@@ -10,6 +15,13 @@ class Info(db.Model):
     city = db.Column(db.String(40), nullable=False)
     state = db.Column(db.String(40), nullable=False)
 
-
     def __repr__(self):
         return f"Info('{self.rollNo}','{self.prn}','{self.name}','{self.mobNo}','{self.email}','{self.city}','{self.state}')"
+
+class Admin(db.Model,UserMixin):
+    id = db.Column(db.Integer,primary_key=True)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(40), nullable=False)
+
+    def __repr__(self):
+        return f"Admin('{self.email}','{self.password}')"

@@ -4,40 +4,42 @@
 <section class="register-form">
     <div class="container">
         <div class="row">
-            <div id="col" class="col-md-12 mt-auto">
-                
-                <div class="card-deck">
-                    {% for i in infos %}
+            {% for i in infos %}
+            <div id="col" class="col-md-6 col-lg-4 col-sm-12 col-xl-4 mt-auto">
                 <div class="card mt-5" style="width: 18rem;">
                         <div class="card-body">
-                            <a href="{{url_for('infoPage',info_id=info_id)}}"><h5 class="card-title">Student - {{i.name}}</h5></a>
-                        <p class="card-text">Roll Number - {{i.rollNo}}</p>
-                        <p class="card-text">PRN - {{i.prn}}</p>
-                        <p class="card-text">Mobile Number - {{i.mobNo}}</p>
-                        <p class="card-text">Email - {{i.email}}</p>
-                        <p class="card-text">City - {{i.city}}</p>
-                        <p class="card-text">State - {{i.state}}</p>
+                            <a href="#"><h5 class="card-title">Student - {{i.name}}</h5></a>
+                            <p class="card-text">Roll Number - {{i.rollNo}}</p>
+                            <p class="card-text">PRN - {{i.prn}}</p>
+                            <p class="card-text">Mobile Number - {{i.mobNo}}</p>
+                            <p class="card-text">Email - {{i.email}}</p>
+                            <p class="card-text">City - {{i.city}}</p>
+                            <p class="card-text">State - {{i.state}}</p>
                         </div>
-                    </div>
-                    {% endfor %}
+                        <div class="card-footer text-center">
+                            <form action="{{url_for('sis.adminDel')}}" method="POST">
+                                <input id="delete" type="submit" class="btn btn-primary" value="Delete!">
+                            </form>
+                        </div>
                 </div>
-
             </div>
+            {% endfor %}
         </div>
-        
     </div>
 </section>
 
+<section class="footer fixed-bottom">
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{category}} mt-3">
+                        {{message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</section>
     
 {% endblock content %}
-
-<!-- <tr>
-                            <th>Roll_No</th>
-                            <th>PRN</th>
-                            <th>Name</th>
-                            <th>Mobile Number</th>
-                            <th>Email</th>
-                            <th>City</th>
-                            <th>State</th>
-                        </tr>
-                        <tr>

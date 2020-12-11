@@ -2,70 +2,74 @@
 {% block content %}
     <section class="register-form">
         <div class="container">
-            <div class="row h-100">
-                <div class="col-3"></div>
-                <div id="col" class="col-md-12 col-lg-6 mt-auto">
-                    <div class="jumbotron vertical-center mt-5 mb-5">
-                        <form method="POST" action="">
+            <div class="row">
+                <div class="col-md-12 col-lg-6 mx-auto">
+                    
+                    <div class="jumbotron vertical-center mb-5" style="transform: translateY(10%);">
+                        <h1 class="text-center" style="font-weight: 800;">Register!</h1>
+                        <form method="POST" action="" class="mt-5">
                             {{form.hidden_tag()}}
-                            <div class="form-group">
-                              <label for="rollNo">Roll No</label>
-                                {% if form.rollNo.errors %}
-                                    {{form.rollNo(class="form-control is-invalid")}}
-                                    <div class="invalid-feedback">
-                                        {% for error in form.rollNo.errors %}
-                                            <span>{{ error }}</span>
-                                        {% endfor %}
-                                    </div>
-                                {% else %}
-                                    {{form.rollNo(class="form-control")}}
-                                {% endif %}
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="rollNo">Roll No</label>
+                                      {% if form.rollNo.errors %}
+                                          {{form.rollNo(class="form-control is-invalid")}}
+                                          <div class="invalid-feedback">
+                                              {% for error in form.rollNo.errors %}
+                                                  <span>{{ error }}</span>
+                                              {% endfor %}
+                                          </div>
+                                      {% else %}
+                                          {{form.rollNo(class="form-control")}}
+                                      {% endif %}
+                                  </div>
+      
+                                  <div class="form-group col-md-6">
+                                      <label for="prn">PRN</label>
+                                      {% if form.prn.errors %}
+                                          {{form.prn(class="form-control is-invalid")}}
+                                          <div class="invalid-feedback">
+                                              {% for error in form.prn.errors %}
+                                                  <span>{{ error }}</span>
+                                              {% endfor %}
+                                          </div>
+                                      {% else %}
+                                          {{form.prn(class="form-control")}}
+                                      {% endif %}
+                                  </div>
                             </div>
-
-                            <div class="form-group">
-                                <label for="prn">PRN</label>
-                                {% if form.prn.errors %}
-                                    {{form.prn(class="form-control is-invalid")}}
-                                    <div class="invalid-feedback">
-                                        {% for error in form.prn.errors %}
-                                            <span>{{ error }}</span>
-                                        {% endfor %}
-                                    </div>
-                                {% else %}
-                                    {{form.prn(class="form-control")}}
-                                {% endif %}
+                            
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="name">Name</label>
+                                    {% if form.name.errors %}
+                                        {{form.name(class="form-control is-invalid")}}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.name.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{form.name(class="form-control")}}
+                                    {% endif %}
+                                  </div>
+    
+    
+                                  <div class="form-group col-md-6">
+                                    <label for="mobNo">Mobile No</label>
+                                    {% if form.mobNo.errors %}
+                                        {{form.mobNo(class="form-control is-invalid")}}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.mobNo.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{form.mobNo(class="form-control")}}
+                                    {% endif %}
+                                  </div>
                             </div>
-
-                              <div class="form-group">
-                                <label for="name">Name</label>
-                                {% if form.name.errors %}
-                                    {{form.name(class="form-control is-invalid")}}
-                                    <div class="invalid-feedback">
-                                        {% for error in form.name.errors %}
-                                            <span>{{ error }}</span>
-                                        {% endfor %}
-                                    </div>
-                                {% else %}
-                                    {{form.name(class="form-control")}}
-                                {% endif %}
-                              </div>
-
-
-                              <div class="form-group">
-                                <label for="mobNo">Mobile No</label>
-                                {% if form.mobNo.errors %}
-                                    {{form.mobNo(class="form-control is-invalid")}}
-                                    <div class="invalid-feedback">
-                                        {% for error in form.mobNo.errors %}
-                                            <span>{{ error }}</span>
-                                        {% endfor %}
-                                    </div>
-                                {% else %}
-                                    {{form.mobNo(class="form-control")}}
-                                {% endif %}
-                              </div>
-
-
+                            
                               <div class="form-group">
                                 <label for="email">Email</label>
                                 {% if form.email.errors %}
@@ -80,36 +84,48 @@
                                 {% endif %}
                               </div>
 
-
-                              <div class="form-group">
-                                <label for="city">City</label>
-                                {% if form.city.errors %}
-                                    {{form.city(class="form-control is-invalid")}}
-                                    <div class="invalid-feedback">
-                                        {% for error in form.city.errors %}
-                                            <span>{{ error }}</span>
-                                        {% endfor %}
-                                    </div>
-                                {% else %}
-                                    {{form.city(class="form-control")}}
-                                {% endif %}
+                              <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="city">City</label>
+                                    {% if form.city.errors %}
+                                        {{form.city(class="form-control is-invalid")}}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.city.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{form.city(class="form-control")}}
+                                    {% endif %}
+                                  </div>
+    
+    
+                                  <div class="form-group col-md-6">
+                                    <label for="state">State</label>
+                                    {% if form.state.errors %}
+                                        {{form.state(class="form-control is-invalid")}}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.state.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{form.state(class="form-control")}}
+                                    {% endif %}
+                                  </div>
                               </div>
+                              
+                              {{form.submit(class="btn btn-primary submit-btn w-100 mt-5")}}
 
-
-                              <div class="form-group">
-                                <label for="state">State</label>
-                                {% if form.state.errors %}
-                                    {{form.state(class="form-control is-invalid")}}
-                                    <div class="invalid-feedback">
-                                        {% for error in form.state.errors %}
-                                            <span>{{ error }}</span>
-                                        {% endfor %}
-                                    </div>
-                                {% else %}
-                                    {{form.state(class="form-control")}}
+                              {% with messages = get_flashed_messages(with_categories=true) %}
+                                {% if messages %}
+                                    {% for category, message in messages %}
+                                        <div class="alert alert-{{category}} mt-3">
+                                            {{message}}
+                                        </div>
+                                    {% endfor %}
                                 {% endif %}
-                              </div>
-                              {{form.submit(class="btn btn-primary submit-btn w-100")}}
+                            {% endwith %}
                           </form>
                     </div>
                 </div>  

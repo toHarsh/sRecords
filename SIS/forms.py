@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
+from wtforms import StringField, SubmitField, PasswordField
 from wtforms.validators import Email,DataRequired,Length, ValidationError
 from SIS.models import Info
 import email_validator
@@ -50,3 +50,10 @@ class sisForm(FlaskForm):
     #    info = Info.query.filter_by(mobNo=mobNo.data).first()
     #    if len(mobNo) < 10:
     #        raise ValidationError('Mobile Number must be of 10 digits')
+
+class adminForm(FlaskForm):
+    email = StringField('Email',
+                        validators=[DataRequired(), Email()])
+    password = PasswordField('Password',
+                        validators=[DataRequired(),Length(min=2,max=10)])
+    submit = SubmitField('Submit')

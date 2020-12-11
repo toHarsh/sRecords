@@ -1,11 +1,17 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
+import os
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY']='8a62b083c268dfcf91b523a0b5eb9f08'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+app.config['SECRET_KEY']=os.environ.get('API_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(' SQLALCHEMY_DATABASE_URI')
 
 db = SQLAlchemy(app)
 
-from SIS import routes
+login_manager = LoginManager(app)
+
+from SIS.routes import sis
+
+app.register_blueprint(sis)
