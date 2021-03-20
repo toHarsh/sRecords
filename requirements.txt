@@ -74,7 +74,6 @@ terminado==0.9.1
 testpath==0.4.4
 threadpoolctl==2.1.0
 tornado==6.1
-traitlets==5.0.5
 ujson==4.0.1
 urllib3==1.26.2
 wcwidth==0.2.5
