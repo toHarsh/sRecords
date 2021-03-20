@@ -34,7 +34,8 @@ def display():
 def adminReg():
     form = adminForm()
     if form.validate_on_submit():
-        Reg = Admin.query.filter_by(email=form.email.data,password=form.password.data).first()
+        # Reg = Admin.query.filter_by(email=form.email.data,password=form.password.data).first()
+        Reg = Admin(email=form.email.data,password=form.password.data)
         db.session.add(Reg)
         db.session.commit()
         return redirect(url_for('sis.adminLog'))
