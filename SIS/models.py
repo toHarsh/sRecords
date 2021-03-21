@@ -1,6 +1,10 @@
 from SIS import db,login_manager
 from flask_login import UserMixin
 
+# @app.before_first_request
+# def create_tables():
+#     db.create_all()
+
 @login_manager.user_loader
 def get_user(user_id):
     return Admin.query.get(int(user_id))
