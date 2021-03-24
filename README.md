@@ -28,3 +28,11 @@ Steps:
         End</li>
 
 </ul>
+
+For Admin registration go to:
+https://easytomanage.herokuapp.com/admin-register
+
+To view the Dashboard/ records or entries:
+Step 1: Admin should login
+link: https://easytomanage.herokuapp.com/admin-login
+Step 2: See the records.
